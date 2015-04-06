@@ -7,4 +7,7 @@
 
 (defn divisible-by? [num]
   "returns function which checks if passed argument is a number divisible by [num]"
-  #(= 0 (mod % num)))
+  #(zero? (mod % num)))
+
+;;; Alternative solution using the step parameter in range and concat
+(reduce + (set (concat (range 0 1000 3) (range 0 1000 5))))
